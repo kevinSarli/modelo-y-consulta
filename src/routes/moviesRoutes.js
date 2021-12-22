@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {list,nueva,recommended,detail,add,create,edit,update,erase,remove} = require('../controllers/moviesController');
+const {list,nueva,recommended,detail,add,create,edit,update,destroy,remove} = require('../controllers/moviesController');
 const addMovieValidator = require('../validations/addMovieValidator');
 
 
@@ -14,7 +14,7 @@ router
     .post('/add', addMovieValidator, create)
     .get('/edit/:id', edit)
     .put('/edit/:id',addMovieValidator, update)
-    .get('/delete/:id', erase)
-    .delete('/delete/:id', remove)
+    .get('/delete/:id', remove)
+    .delete('/delete/:id', destroy)
 
 module.exports = router;

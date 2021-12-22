@@ -115,7 +115,7 @@ module.exports = {
 
 
 },
-    erase: function (req, res) {
+    remove: function (req, res) {
         db.Pelicula.findByPk(req.params.id).then(movie =>{
             res.render('moviesDelete', {
                 movie
@@ -125,7 +125,7 @@ module.exports = {
           .catch(error => console.log(error))
     
     },
-    remove: function (req, res) {
+    destroy: function (req, res) {
        db.Pelicula.destroy({
            where: {
               id: req.params.id
